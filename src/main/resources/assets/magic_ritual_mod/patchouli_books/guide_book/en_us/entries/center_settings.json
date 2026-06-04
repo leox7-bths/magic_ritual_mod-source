@@ -1,0 +1,19 @@
+{
+    "name": "Center Settings",
+    "icon": "minecraft:oak_sign",
+    "category": "magic_ritual_mod:magic_center",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The Magic Center GUI provides several controls to fine-tune your ritual setup.$(br2)$(bold)Circle Type Toggles$() - Each circle type (Attack, Defense, Regeneration) has an On/Off switch. Turn off types you don't want to use without breaking the circles."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Player Blacklist$() - Add players by name to prevent them from receiving any circle effects. To add a player, type their name in the text field and click $(bold)Add$(). To remove, click $(bold)Remove$() next to their name.$(br2)$(bold)Mob Filters$() - Toggle whether hostile mobs (zombies, skeletons, etc.) and passive mobs (cows, sheep, etc.) receive circle effects."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "All settings are saved and will persist even if the center block is unloaded and reloaded. Changes take effect immediately - there is no need to refresh or reload the setup."
+        }
+    ]
+}

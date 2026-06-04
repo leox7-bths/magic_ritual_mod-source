@@ -1,0 +1,20 @@
+{
+  "name": "燃料系统",
+  "icon": "magic_ritual_mod:spirit_stone",
+  "category": "magic_ritual_mod:magic_center",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "magic_ritual_mod:spirit_stone",
+      "text": "阵眼需要$(item)灵石$()作为燃料来驱动其连接的符文。如果没有燃料，所有效果都不会生效。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)燃料消耗$()$(br2)燃料基础消耗取决于阵眼半径：$(br2)$(li)半径 3：每分钟 8 灵石（基础）$(li)半径 5：每分钟 16 灵石（基础）$(li)半径 7：每分钟 32 灵石（基础）$(li)半径 9：每分钟 64 灵石（基础）$(li)半径 11：每分钟 96 灵石（基础）$(li)半径 13：每分钟 128 灵石（基础）$(br2)每增加一个符文，每分钟额外增加 10 灵石消耗。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)示例：$()一个半径 5、包含 10 个符文的阵眼：$(br)16 + (10 × 10) = 每分钟 116 灵石$(br2)将灵石放入阵眼 GUI 的燃料槽中即可维持运行。"
+    }
+  ]
+}

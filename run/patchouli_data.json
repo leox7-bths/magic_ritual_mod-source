@@ -1,0 +1,26 @@
+{
+  "bookGuiScale": 0,
+  "clickedVisualize": false,
+  "bookData": {
+    "magic_ritual_mod:guide_book": {
+      "viewedEntries": [
+        "magic_ritual_mod:ritual_dagger",
+        "magic_ritual_mod:what_is_center",
+        "magic_ritual_mod:radius_control",
+        "magic_ritual_mod:fuel_system",
+        "magic_ritual_mod:center_settings",
+        "magic_ritual_mod:placing_circles",
+        "magic_ritual_mod:circle_effects",
+        "magic_ritual_mod:circle_types",
+        "magic_ritual_mod:spirit_map",
+        "magic_ritual_mod:spirit_ore",
+        "magic_ritual_mod:spirit_vein_center",
+        "magic_ritual_mod:bleeding",
+        "magic_ritual_mod:inverted_control",
+        "magic_ritual_mod:fog"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
+}

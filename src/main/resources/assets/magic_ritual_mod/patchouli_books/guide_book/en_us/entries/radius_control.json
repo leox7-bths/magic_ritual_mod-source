@@ -1,0 +1,15 @@
+{
+    "name": "Radius & Bleeding",
+    "icon": "magic_ritual_mod:magic_center_block",
+    "category": "magic_ritual_mod:magic_center",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "When placing a Magic Center, you choose from three radius options:$(br2)$(bold)Radius 5$() - Costs 5 seconds of Bleeding$(br)$(bold)Radius 7$() - Costs 7 seconds of Bleeding$(br)$(bold)Radius 9$() - Costs 9 seconds of Bleeding"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "The radius determines two things:$(br2)$(li)The area in which magic circles are detected and powered$(li)The base fuel consumption rate (larger radius = more fuel per minute)$(br2)Magic circles must be within the center's radius (horizontally) and on the same Y-level (+/- 1 block) to be counted."
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+  "item.magic_ritual_mod.ritual_dagger": "Ritual Dagger",
+  "item.magic_ritual_mod.spirit_stone": "Spirit Stone",
+
+  "block.magic_ritual_mod.magic_center_block": "Magic Center Block",
+  "block.magic_ritual_mod.magic_circle_block": "Magic Circle Block",
+  "block.magic_ritual_mod.spirit_vein_center": "Spirit Vein Center",
+  "block.magic_ritual_mod.spirit_ore": "Spirit Ore",
+  "item.magic_ritual_mod.spirit_map": "Spirit Ore Map",
+
+
+  "itemGroup.magic_ritual_mod": "Magic Ritual",
+
+  "effect.magic_ritual_mod.bleeding": "Bleeding",
+  "effect.magic_ritual_mod.fog": "Fog",
+  "effect.magic_ritual_mod.inverted_control": "Inverted",
+
+
+  "gui.magic_ritual_mod.select_circle": "Choose Sigil Type",
+  "gui.magic_ritual_mod.select_radius": "Choose Center Radius",
+  "gui.magic_ritual_mod.add": "Add",
+  "gui.magic_ritual_mod.remove": "Remove",
+  "gui.magic_ritual_mod.blacklist": "Blacklist",
+
+  "circle_type.magic_ritual_mod.attack": "Attack",
+  "circle_type.magic_ritual_mod.defense": "Defense",
+  "circle_type.magic_ritual_mod.regeneration": "Regeneration",
+
+  "radius.magic_ritual_mod.r3": "Radius 3",
+  "radius.magic_ritual_mod.r5": "Radius 5",
+  "radius.magic_ritual_mod.r7": "Radius 7",
+  "radius.magic_ritual_mod.r9": "Radius 9",
+  "radius.magic_ritual_mod.r11": "Radius 11",
+  "radius.magic_ritual_mod.r13": "Radius 13",
+
+  "container.magic_ritual_mod.center_fuel": "Magic Center Fuel",
+
+  "magic_ritual_mod.book.name": "Magic Ritual Guide",
+  "magic_ritual_mod.book.landing": "Welcome to the Magic Ritual mod! This guide will teach you everything from your first ritual dagger to managing a complete magical network."
+}

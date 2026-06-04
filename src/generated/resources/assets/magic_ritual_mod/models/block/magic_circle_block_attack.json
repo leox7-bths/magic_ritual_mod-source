@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "magic_ritual_mod:block/magic_circle_attack"
+  }
+}

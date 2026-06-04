@@ -1,0 +1,20 @@
+{
+    "name": "Fuel System",
+    "icon": "magic_ritual_mod:spirit_stone",
+    "category": "magic_ritual_mod:magic_center",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "item": "magic_ritual_mod:spirit_stone",
+            "text": "Magic Centers require $(item)Spirit Stones$() as fuel to power their connected circles. Without fuel, no effects are applied."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Fuel Consumption$()$(br2)The fuel cost depends on the center's radius and the number of circles within it:$(br2)$(li)Radius 5: 16 Spirit Stones / minute (base)$(li)Radius 7: 32 Spirit Stones / minute (base)$(li)Radius 9: 64 Spirit Stones / minute (base)$(br2)Each additional circle adds 10 Spirit Stones / minute."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Example:$() A Radius 5 center with 10 circles consumes:$(br)16 + (10 x 10) = 116 Spirit Stones per minute.$(br2)Place Spirit Stones in the fuel slot of the center's GUI to keep it running. 1 Spirit Stone fuels the center for approximately 1 minute (at base consumption)."
+        }
+    ]
+}

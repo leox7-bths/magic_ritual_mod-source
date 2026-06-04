@@ -1,0 +1,24 @@
+package com.example.magic_ritual_mod.network.payload;
+
+import com.example.magic_ritual_mod.MagicRitualMod;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.ResourceLocation;
+
+public record ServerboundPlaceCirclePayload(String circleType) implements CustomPacketPayload {
+    public static final CustomPacketPayload.Type<ServerboundPlaceCirclePayload> TYPE =
+            new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(MagicRitualMod.MODID, "place_circle"));
+
+    public static final StreamCodec<ByteBuf, ServerboundPlaceCirclePayload> STREAM_CODEC =
+            StreamCodec.composite(
+                    ByteBufCodecs.STRING_UTF8, ServerboundPlaceCirclePayload::circleType,
+                    ServerboundPlaceCirclePayload::new
+            );
+
+    @Override
+    public CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
+        return TYPE;
+    }
+}

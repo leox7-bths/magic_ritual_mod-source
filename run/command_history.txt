@@ -1,0 +1,50 @@
+/time set day
+/summon minecraft:iron_golem
+/weather clear
+/time set day
+/give Dev minecraft:chest
+/locate poi magic_ritual_mod_1780065566:spirit_vein_center
+/tp @s -169 ~ 69
+/effect give Dev minecraft:night_vision 10000 200
+/tp @s -169 200 69
+/setblock -104 63 65 magic_ritual_mod_1780065566:spirit_fluid
+/tp @s -169 200 69
+/summon minecraft:husk
+/give Dev minecraft:chest
+/locate poi magic_ritual_mod_1780065566:spirit_vein_center
+/tp @s -171 ~ 68
+/give Dev minecraft:hopper
+/give Dev minecraft:water_bucket
+/give Dev slab
+/give Dev minecraft:bamboo_slab
+/give Dev minecraft:oak_trapdoor
+/give Dev minecraft:diamond_pickaxe
+/enchant Dev minecraft:silk_touch
+/effect give Dev minecraft:saturation infinite 1 true
+/locate poi magic_ritual_mod_1780065566:spirit_vein_center
+/tp @s -41 ~ 56
+/time set day
+/give Dev minecraft:chest
+/give Dev magic_ritual_mod_1780065566:spirit_stone 1000
+/effect clear
+/effect give Dev magic_ritual_mod_1780065566:fog
+/effect give Dev magic_ritual_mod_1780065566:inverted_control 10 1
+/give Dev magic_ritual_mod_1780065566:spirit_stone 1000
+/effect give Dev magic_ritual_mod_1780065566:fog 1000 200
+/effect clear
+/time set day
+/give Dev magic_ritual_mod_1780065566:spirit_stone 1000
+/effect give Dev magic_ritual_mod_1780065566:inverted_control 10 1
+/effect clear
+/effect give Dev minecraft:night_vision infinite 1 true
+/give Dev minecraft:sponge
+/give @p patchouli:guide_book{"patchouli:book":"magic_ritual_mod_1780065566:ritual_guide"}
+/give Dev patchouli:guide_book
+/time set day
+/effect give Dev minecraft:night_vision infinite 1
+/give Dev minecraft:chest
+/give Dev magic_ritual_mod:spirit_stone 1000
+/effect give Dev magic_ritual_mod:inverted_control 10 1
+/give Dev magic_ritual_mod:spirit_stone 1000
+/time set day
+/give Dev magic_ritual_mod:spirit_vein_center

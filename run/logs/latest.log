@@ -1,0 +1,130 @@
+[04Jun2026 09:49:33.274] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.230, --assetIndex, 17, --assetsDir, C:\\Users\\Leo\\.gradle\\caches\\neoformruntime\\assets, --gameDir, ., --fml.fmlVersion, 4.0.42, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.230, --fml.neoFormVersion, 20240808.144430]
+[04Jun2026 09:49:33.277] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.9+7-LTS-338
+[04Jun2026 09:49:33.278] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.9 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[04Jun2026 09:49:33.370] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[04Jun2026 09:49:33.461] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[04Jun2026 09:49:33.600] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[04Jun2026 09:49:33.664] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/Leo/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23138!/ Service=ModLauncher Env=CLIENT
+[04Jun2026 09:49:33.847] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 2080 SUPER/PCIe/SSE2 GL version 4.6.0 NVIDIA 591.86, NVIDIA Corporation
+[04Jun2026 09:49:34.018] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[04Jun2026 09:49:34.020] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Architectury 13.0.8 (architectury)
+		Iron Chests 1.21-neoforge-16.0.7 (ironchest)
+		Jade 15.10.5+neoforge (jade)
+		Magic Ritual 1.0.0 (magic_ritual_mod)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.230 (neoforge)
+		Patchouli 1.21.1-93-NEOFORGE (patchouli)
+[04Jun2026 09:49:34.760] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[04Jun2026 09:49:34.780] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.230, --gameDir, ., --assetsDir, C:\Users\Leo\.gradle\caches\neoformruntime\assets, --assetIndex, 17]
+[04Jun2026 09:49:34.827] [main/WARN] [mixin/]: Reference map 'patchouli.refmap.json' for patchouli_xplat.mixins.json could not be read. If this is a development environment you can ignore this message
+[04Jun2026 09:49:35.136] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[04Jun2026 09:49:36.283] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 277 milliseconds
+[04Jun2026 09:49:40.060] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[04Jun2026 09:49:40.061] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[04Jun2026 09:49:40.063] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[04Jun2026 09:49:40.064] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[04Jun2026 09:49:40.065] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[04Jun2026 09:49:40.127] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Leo/IdeaProjects/magic_ritual_mod-source/build/moddev/artifacts/neoforge-21.1.230.jar%23193!/assets/.mcassetsroot' uses unexpected schema
+[04Jun2026 09:49:40.127] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Leo/IdeaProjects/magic_ritual_mod-source/build/moddev/artifacts/neoforge-21.1.230.jar%23193!/data/.mcassetsroot' uses unexpected schema
+[04Jun2026 09:49:40.145] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[04Jun2026 09:49:40.152] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[04Jun2026 09:49:40.226] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[04Jun2026 09:49:40.393] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.230, for MC 1.21.1
+[04Jun2026 09:49:41.047] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [magic_ritual_mod]
+[04Jun2026 09:49:41.168] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/patchouli, mod/jade, mod/architectury, mod/magic_ritual_mod, mod/ironchest, mod/neoforge
+[04Jun2026 09:49:41.278] [Worker-Main-13/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[04Jun2026 09:49:41.313] [Worker-Main-11/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=13'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=3'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=4'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=5'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=6'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=7'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=8'
+[04Jun2026 09:49:41.802] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=9'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=10'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=11'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/magic_center_block.json' missing model for variant: 'magic_ritual_mod:magic_center_block#radius=12'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/spirit_vein_center.json' missing model for variant: 'magic_ritual_mod:spirit_vein_center#'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/combo_block.json' missing model for variant: 'magic_ritual_mod:combo_block#combo_type=inverted'
+[04Jun2026 09:49:41.803] [Worker-Main-9/WARN] [net.minecraft.client.resources.model.BlockStateModelLoader/]: Exception loading blockstate definition: 'magic_ritual_mod:blockstates/combo_block.json' missing model for variant: 'magic_ritual_mod:combo_block#combo_type=fog'
+[04Jun2026 09:49:42.274] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[04Jun2026 09:49:42.310] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.vanilla.VanillaPlugin in 34.80 ms
+[04Jun2026 09:49:42.318] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.vanilla.VanillaPlugin in 42.35 ms
+[04Jun2026 09:49:42.318] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[04Jun2026 09:49:42.322] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.universal.UniversalPlugin in 3.523 ms
+[04Jun2026 09:49:42.322] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.universal.UniversalPlugin in 3.862 ms
+[04Jun2026 09:49:42.322] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[04Jun2026 09:49:42.324] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.debug.DebugPlugin in 1.490 ms
+[04Jun2026 09:49:42.325] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.debug.DebugPlugin in 1.795 ms
+[04Jun2026 09:49:42.325] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[04Jun2026 09:49:42.328] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.core.CorePlugin in 2.581 ms
+[04Jun2026 09:49:42.328] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.core.CorePlugin in 2.921 ms
+[04Jun2026 09:49:42.328] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[04Jun2026 09:49:42.331] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.access.AccessibilityPlugin in 2.650 ms
+[04Jun2026 09:49:42.332] [Worker-Main-3/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.access.AccessibilityPlugin in 3.059 ms
+[04Jun2026 09:49:42.445] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[04Jun2026 09:49:42.445] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[04Jun2026 09:49:42.509] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (High Definition Audio Device)
+[04Jun2026 09:49:42.510] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[04Jun2026 09:49:42.597] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[04Jun2026 09:49:42.602] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[04Jun2026 09:49:42.603] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[04Jun2026 09:49:42.603] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[04Jun2026 09:49:42.603] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[04Jun2026 09:49:42.605] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[04Jun2026 09:49:42.605] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
+[04Jun2026 09:49:42.605] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[04Jun2026 09:49:42.605] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[04Jun2026 09:49:42.742] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[04Jun2026 09:49:42.743] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[04Jun2026 09:49:42.743] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[04Jun2026 09:49:42.743] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[04Jun2026 09:49:42.744] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[04Jun2026 09:49:42.771] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[04Jun2026 09:49:42.820] [Render thread/INFO] [patchouli/]: BookContentResourceListenerLoader preloaded 38 jsons
+[04Jun2026 09:49:42.823] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[04Jun2026 09:49:58.968] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1312 recipes
+[04Jun2026 09:49:59.100] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1421 advancements
+[04Jun2026 09:49:59.429] [Render thread/INFO] [snownee.jade.Jade/]: LootTableMineableCollector took 3.312 ms
+[04Jun2026 09:49:59.478] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[04Jun2026 09:49:59.479] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[04Jun2026 09:49:59.647] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[04Jun2026 09:49:59.840] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[04Jun2026 09:49:59.937] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[04Jun2026 09:49:59.938] [Server thread/INFO] [patchouli/]: Sending reload packet to clients
+[04Jun2026 09:49:59.950] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 290 ms
+[04Jun2026 09:50:00.010] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[04Jun2026 09:50:00.010] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[04Jun2026 09:50:00.473] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:8fd18422] logged in with entity id 11 at (-1.4723297394536412, -60.0, 31.971905107009015)
+[04Jun2026 09:50:00.511] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[04Jun2026 09:50:00.845] [Render thread/INFO] [snownee.jade.Jade/]: Received config from the server: 
+[04Jun2026 09:50:00.846] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 46 advancements
+[04Jun2026 09:50:00.853] [Render thread/INFO] [patchouli/]: BookContentResourceListenerLoader: Files found in 150.5 μs
+[04Jun2026 09:50:00.859] [Render thread/INFO] [patchouli/]: BookContentResourceListenerLoader: Files found in 203.1 μs
+[04Jun2026 09:50:00.870] [Render thread/INFO] [patchouli/]: BookContentResourceListenerLoader: Files found in 137.0 μs
+[04Jun2026 09:50:29.749] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[04Jun2026 09:50:29.787] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[04Jun2026 09:50:29.794] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[04Jun2026 09:50:29.794] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/magic_ritual_mod:empty
+[04Jun2026 09:50:29.795] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[04Jun2026 09:58:11.285] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[04Jun2026 09:58:11.306] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[04Jun2026 09:58:11.307] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[04Jun2026 09:58:11.373] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[04Jun2026 09:58:11.393] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[04Jun2026 09:58:11.393] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[04Jun2026 09:58:11.393] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[04Jun2026 09:58:11.499] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[04Jun2026 09:58:11.730] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[04Jun2026 09:58:12.131] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/magic_ritual_mod:empty
+[04Jun2026 09:58:12.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[04Jun2026 09:58:12.198] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[04Jun2026 09:58:12.198] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[04Jun2026 09:58:12.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (empty): All chunks are saved
+[04Jun2026 09:58:12.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[04Jun2026 09:58:12.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

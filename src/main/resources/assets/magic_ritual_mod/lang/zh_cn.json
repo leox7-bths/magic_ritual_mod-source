@@ -1,0 +1,39 @@
+{
+  "item.magic_ritual_mod.ritual_dagger": "仪式匕首",
+  "item.magic_ritual_mod.spirit_stone": "灵石",
+
+  "block.magic_ritual_mod.magic_center_block": "阵眼",
+  "block.magic_ritual_mod.magic_circle_block": "符文",
+  "block.magic_ritual_mod.spirit_vein_center": "灵脉核心",
+  "block.magic_ritual_mod.spirit_ore": "灵石矿石",
+  "item.magic_ritual_mod.spirit_map": "灵石矿石地图",
+
+
+  "itemGroup.magic_ritual_mod": "阵法",
+
+  "effect.magic_ritual_mod.bleeding": "流血",
+  "effect.magic_ritual_mod.fog": "雾",
+  "effect.magic_ritual_mod.inverted_control": "逆转控制",
+
+  "gui.magic_ritual_mod.select_circle": "选择符文类型",
+  "gui.magic_ritual_mod.select_radius": "选择中心半径",
+  "gui.magic_ritual_mod.add": "添加",
+  "gui.magic_ritual_mod.remove": "移除",
+  "gui.magic_ritual_mod.blacklist": "黑名单",
+
+  "circle_type.magic_ritual_mod.attack": "攻击",
+  "circle_type.magic_ritual_mod.defense": "防御",
+  "circle_type.magic_ritual_mod.regeneration": "生命恢复",
+
+  "radius.magic_ritual_mod.r3": "半径 3",
+  "radius.magic_ritual_mod.r5": "半径 5",
+  "radius.magic_ritual_mod.r7": "半径 7",
+  "radius.magic_ritual_mod.r9": "半径 9",
+  "radius.magic_ritual_mod.r11": "半径 11",
+  "radius.magic_ritual_mod.r13": "半径 13",
+
+  "container.magic_ritual_mod.center_fuel": "燃料",
+
+  "magic_ritual_mod.book.name": "阵法指南",
+  "magic_ritual_mod.book.landing": "夫阵法者，天地之精为也。上古神魔之战，遗落星斗于苍梧，化符箓于赤水，遂成阵道雏形。其法以山川为笔，灵气为墨，借五行之序，演周天之变。"
+}

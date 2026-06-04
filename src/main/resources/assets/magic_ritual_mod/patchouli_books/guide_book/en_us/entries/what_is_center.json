@@ -1,0 +1,20 @@
+{
+    "name": "What is a Magic Center",
+    "icon": "magic_ritual_mod:magic_center_block",
+    "category": "magic_ritual_mod:magic_center",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "item": "magic_ritual_mod:magic_center_block",
+            "text": "The $(item)Magic Center Block$() is the $(bold)invisible$() anchor of your ritual setup. It defines the radius in which magic circles operate and provides the fuel they need to function."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "To place one, $(bold)Shift + Right-click$() with the Ritual Dagger and choose a radius. The center is placed beneath your feet.$(br2)The center block is invisible but shows red particle effects along its radius. It breaks very easily and does not drop anything."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Right-click$() the center block (or its location) to open the control GUI. From here you can:$(br2)$(li)Add Spirit Stones as fuel$(li)Toggle circle types on/off$(li)Configure entity filters$(li)Manage the player blacklist"
+        }
+    ]
+}

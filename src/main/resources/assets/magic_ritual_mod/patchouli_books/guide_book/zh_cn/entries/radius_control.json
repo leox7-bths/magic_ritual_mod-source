@@ -1,0 +1,15 @@
+{
+  "name": "半径与流血",
+  "icon": "magic_ritual_mod:magic_center_block",
+  "category": "magic_ritual_mod:magic_center",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "放置阵眼时，你可以从以下半径中选择：$(br2)$(bold)半径 3$()——消耗 3 秒流血$(br)$(bold)半径 5$()——消耗 5 秒流血$(br)$(bold)半径 7$()——消耗 7 秒流血$(br)$(bold)半径 9$()——消耗 9 秒流血$(br)$(bold)半径 11$()——消耗 11 秒流血$(br)$(bold)半径 13$()——消耗 13 秒流血"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "半径决定两件事：$(br2)$(li)符文被检测与供能的范围$(li)基础燃料消耗速度（半径越大，每分钟消耗越多）$(br2)符文必须在阵眼半径范围内且与阵眼Y轴相差不超过±1格，才会被计算。"
+    }
+  ]
+}
