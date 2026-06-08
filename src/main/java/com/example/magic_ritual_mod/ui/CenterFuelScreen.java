@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CenterFuelScreen extends AbstractContainerScreen<CenterFuelMenu> {
-    private static final String NS = "autoforge_bricks";
+    private static final String NS = "minecraft";
     private static ResourceLocation tex(String name) {
         return ResourceLocation.fromNamespaceAndPath(NS, "textures/gui/" + name + ".png");
     }

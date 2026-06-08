@@ -14,6 +14,8 @@ import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.joml.Vector3f;
 
+import static com.example.magic_ritual_mod.block.custom.MagicCenterBlockEntity.*;
+
 public class ComboBlockEntity extends BlockEntity {
     private static final int EFFECT_DURATION = 100;
     private static final int EFFECT_INTERVAL = 20;
@@ -33,8 +35,20 @@ public class ComboBlockEntity extends BlockEntity {
         new PatternEntry(1, 1, CircleType.DEFENSE),
     };
 
+    public static final PatternEntry[] FORCEFIELD_PATTERN = {
+            new PatternEntry(1, -1, CircleType.DEFENSE),
+            new PatternEntry(1, 1, CircleType.DEFENSE),
+            new PatternEntry(-1, -1, CircleType.DEFENSE),
+            new PatternEntry(-1, 1, CircleType.DEFENSE),
+
+    };
+
     public static PatternEntry[] getPattern(ComboType comboType) {
-        return comboType == ComboType.FOG ? FOG_PATTERN : INVERTED_PATTERN;
+        return switch (comboType) {
+            case FOG -> FOG_PATTERN;
+            case INVERTED -> INVERTED_PATTERN;
+            case FORCEFIELD -> FORCEFIELD_PATTERN;
+        };
     }
 
     public ComboBlockEntity(BlockPos pos, BlockState state) {
@@ -97,8 +111,15 @@ public class ComboBlockEntity extends BlockEntity {
     }
 
     private static void applyEffect(Level level, BlockPos pos, ComboType type) {
-        DeferredHolder<MobEffect, MobEffect> effect = type == ComboType.FOG
-            ? ModEffects.FOG : ModEffects.INVERTED_CONTROL;
+
+        DeferredHolder<MobEffect, MobEffect> effect = switch (type) {
+            case FOG -> ModEffects.FOG;
+            case INVERTED -> ModEffects.INVERTED_CONTROL;
+            case FORCEFIELD -> null;
+        };
+
+        if (effect == null) return;
+
         AABB area = new AABB(pos);
         for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, area)) {
             entity.addEffect(new MobEffectInstance(effect, EFFECT_DURATION, 0, false, true, true));
@@ -110,13 +131,15 @@ public class ComboBlockEntity extends BlockEntity {
         ComboType type = state.getValue(ComboBlock.COMBO_TYPE);
 
         double[][] points = switch (type) {
-            case FOG -> MagicCenterBlockEntity.FOG_POINTS;
-            case INVERTED -> MagicCenterBlockEntity.INVERTED_POINTS;
+            case FOG -> FOG_POINTS;
+            case INVERTED -> INVERTED_POINTS;
+            case FORCEFIELD -> FORCEFIELD_POINTS;
         };
 
         Vector3f color = switch (type) {
             case FOG -> new Vector3f(1.0F, 1.0F, 1.0F);
             case INVERTED -> new Vector3f(0.5F, 0.0F, 0.5F);
+            case FORCEFIELD -> new Vector3f(0.2F, 0.6F, 1.0F);
         };
 
         double cx = pos.getX() + 0.5;

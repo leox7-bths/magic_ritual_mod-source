@@ -1,6 +1,7 @@
 package com.example.magic_ritual_mod.ui;
 
 import com.example.magic_ritual_mod.MagicRitualMod;
+import com.example.magic_ritual_mod.block.custom.MagicCenterBlockEntity;
 import com.example.magic_ritual_mod.effect.ModEffects;
 import com.example.magic_ritual_mod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -11,10 +12,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.InputEvent;
-import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.ViewportEvent;
+import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+
+import java.util.concurrent.CompletableFuture;
+
+import static com.example.magic_ritual_mod.block.custom.MagicCenterBlockEntity.loadPatterns;
 
 @EventBusSubscriber(modid = MagicRitualMod.MODID, value = Dist.CLIENT)
 public class ModClientEvents {
@@ -22,6 +25,17 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.CENTER_FUEL.get(), CenterFuelScreen::new);
+    }
+
+    @SubscribeEvent
+    public static void onClientReload(RegisterClientReloadListenersEvent event) {
+
+        event.registerReloadListener((barrier, manager, prepProfiler, applyProfiler, backgroundExecutor, gameExecutor) -> {
+
+            MagicCenterBlockEntity.loadPatterns(manager);
+
+            return barrier.wait(null);
+        });
     }
 
     @SubscribeEvent

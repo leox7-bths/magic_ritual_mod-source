@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "radius=3":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=4":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=5":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=6":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=7":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=8":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=9":  { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=10": { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=11": { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=12": { "model": "magic_ritual_mod:block/magic_center_block" },
+    "radius=13": { "model": "magic_ritual_mod:block/magic_center_block" }
+  }
+}

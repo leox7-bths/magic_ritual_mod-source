@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "combo_type=fog": {
+      "model": "magic_ritual_mod:block/combo_block_fog"
+    },
+    "combo_type=inverted": {
+      "model": "magic_ritual_mod:block/combo_block_inverted"
+    },
+    "combo_type=forcefield": {
+      "model": "magic_ritual_mod:block/combo_block_forcefield"
+    }
+  }
+}

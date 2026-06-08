@@ -1,6 +1,8 @@
 package com.example.magic_ritual_mod.block.custom;
 
 import com.example.magic_ritual_mod.block.ModBlocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -494,6 +496,31 @@ public class MagicCircleBlockEntity extends BlockEntity {
     }
 
     public void clientTick(Level level, BlockPos pos, BlockState state) {
+
+        Minecraft mc = Minecraft.getInstance();
+
+        if (mc.level == null || mc.gameRenderer == null) {
+            return;
+        }
+
+        Frustum frustum = mc.levelRenderer.getFrustum();
+
+        AABB box = new AABB(pos).inflate(1);
+
+        if (!frustum.isVisible(box)) {
+            return;
+        }
+
+        if (level.getNearestPlayer(
+                pos.getX() + 0.5,
+                pos.getY() + 0.5,
+                pos.getZ() + 0.5,
+                32,
+                false
+        ) == null) {
+            return;
+        }
+
         if (level == null) return;
 
         double cx = pos.getX() + 0.5;

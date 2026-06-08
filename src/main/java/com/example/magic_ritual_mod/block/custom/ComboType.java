@@ -4,7 +4,8 @@ import net.minecraft.util.StringRepresentable;
 
 public enum ComboType implements StringRepresentable {
     FOG("fog"),
-    INVERTED("inverted");
+    INVERTED("inverted"),
+    FORCEFIELD("forcefield");
 
     private final String name;
 
