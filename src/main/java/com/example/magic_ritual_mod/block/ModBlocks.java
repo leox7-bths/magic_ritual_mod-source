@@ -62,6 +62,14 @@ public class ModBlocks {
                     .noOcclusion()
                     .noLootTable()));
 
+    public static final DeferredBlock<Block> FOG_ESCAPE_BLOCK = BLOCKS.<Block>register("fog_escape_block",
+            () -> new FogEscapeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.NONE)
+                    .strength(0.2f)
+                    .sound(SoundType.STONE)
+                    .noOcclusion()
+                    .noLootTable()));
+
     // ================= BLOCK ITEMS =================
 
     public static final DeferredItem<BlockItem> MAGIC_CENTER_BLOCK_ITEM =

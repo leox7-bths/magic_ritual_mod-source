@@ -23,12 +23,22 @@ public class ComboBlockEntity extends BlockEntity {
 
     public record PatternEntry(int dx, int dz, CircleType type) {}
 
+    // X X A X X
+    // X X X S X
+    // X X D X A
+    // X X X X X
+    // X X X X X
     public static final PatternEntry[] FOG_PATTERN = {
         new PatternEntry(-1, -1, CircleType.ATTACK),
         new PatternEntry(-1, 1, CircleType.DEFENSE),
         new PatternEntry(1, 1, CircleType.ATTACK),
     };
 
+    // X X X X X
+    // X X X X X
+    // X X D X X
+    // X X S X X
+    // X D X D X
     public static final PatternEntry[] INVERTED_PATTERN = {
         new PatternEntry(0, -1, CircleType.DEFENSE),
         new PatternEntry(-1, 1, CircleType.DEFENSE),
@@ -71,15 +81,28 @@ public class ComboBlockEntity extends BlockEntity {
             return;
         }
 
-        applyEffect(level, pos, comboType);
+        if (hasFueledMagicCenter(level, pos)) {
+            applyEffect(level, pos, comboType);
+        }
     }
 
     public static boolean isPatternValid(Level level, BlockPos pos, ComboType type) {
         PatternEntry[] entries = getPattern(type);
+        for (int rotation = 0; rotation < 4; rotation++) {
+            if (isPatternValidAtRotation(level, pos, entries, rotation)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean isPatternValidAtRotation(Level level, BlockPos pos, PatternEntry[] entries, int rotation) {
         for (PatternEntry entry : entries) {
             boolean found = false;
+            int dx = rotateDx(entry.dx(), entry.dz(), rotation);
+            int dz = rotateDz(entry.dx(), entry.dz(), rotation);
             for (int y = -1; y <= 1; y++) {
-                BlockPos checkPos = pos.offset(entry.dx(), y, entry.dz());
+                BlockPos checkPos = pos.offset(dx, y, dz);
                 BlockState blockState = level.getBlockState(checkPos);
                 if (blockState.is(ModBlocks.MAGIC_CIRCLE_BLOCK.get()) &&
                     blockState.getValue(MagicCircleBlock.CIRCLE_TYPE) == entry.type()) {
@@ -92,16 +115,63 @@ public class ComboBlockEntity extends BlockEntity {
         return true;
     }
 
+    private static int rotateDx(int dx, int dz, int rotation) {
+        return switch (rotation) {
+            case 1 -> -dz;
+            case 2 -> -dx;
+            case 3 -> dz;
+            default -> dx;
+        };
+    }
+
+    private static int rotateDz(int dx, int dz, int rotation) {
+        return switch (rotation) {
+            case 1 -> dx;
+            case 2 -> -dz;
+            case 3 -> -dx;
+            default -> dz;
+        };
+    }
+
     public static boolean isCirclePartOfActiveCombo(Level level, BlockPos circlePos) {
         for (ComboType comboType : ComboType.values()) {
             PatternEntry[] entries = getPattern(comboType);
             for (PatternEntry entry : entries) {
-                BlockPos expectedSPos = circlePos.offset(-entry.dx(), 0, -entry.dz());
-                for (int y = -1; y <= 1; y++) {
-                    BlockPos checkPos = expectedSPos.offset(0, y, 0);
-                    BlockState state = level.getBlockState(checkPos);
-                    if (state.is(ModBlocks.COMBO_BLOCK.get()) &&
-                        state.getValue(ComboBlock.COMBO_TYPE) == comboType) {
+                for (int rotation = 0; rotation < 4; rotation++) {
+                    int dx = rotateDx(entry.dx(), entry.dz(), rotation);
+                    int dz = rotateDz(entry.dx(), entry.dz(), rotation);
+                    BlockPos expectedSPos = circlePos.offset(-dx, 0, -dz);
+                    for (int y = -1; y <= 1; y++) {
+                        BlockPos checkPos = expectedSPos.offset(0, y, 0);
+                        BlockState state = level.getBlockState(checkPos);
+                        if (state.is(ModBlocks.COMBO_BLOCK.get()) &&
+                            state.getValue(ComboBlock.COMBO_TYPE) == comboType) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean hasFueledMagicCenter(Level level, BlockPos comboPos) {
+        for (int dx = -13; dx <= 13; dx++) {
+            for (int dz = -13; dz <= 13; dz++) {
+                for (int dy = -3; dy <= 3; dy++) {
+                    BlockPos centerPos = comboPos.offset(dx, dy, dz);
+                    BlockState state = level.getBlockState(centerPos);
+                    if (!state.is(ModBlocks.MAGIC_CENTER_BLOCK.get())) {
+                        continue;
+                    }
+
+                    int radius = state.getValue(MagicCenterBlock.RADIUS);
+                    if (dx * dx + dz * dz > radius * radius) {
+                        continue;
+                    }
+
+                    BlockEntity blockEntity = level.getBlockEntity(centerPos);
+                    if (blockEntity instanceof MagicCenterBlockEntity center && center.hasFuel()) {
                         return true;
                     }
                 }

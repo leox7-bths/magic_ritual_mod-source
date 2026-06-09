@@ -3,18 +3,19 @@
   "generator": {
     "type": "minecraft:flat",
     "settings": {
-      "biome": "minecraft:plains",
+      "biome": "magic_ritual_mod:empty",
+      "structure_overrides": [],
       "layers": [
         {
-          "block": "minecraft:grass_block",
+          "block": "minecraft:bedrock",
           "height": 1
         },
         {
-          "block": "minecraft:dirt",
-          "height": 2
+          "block": "minecraft:stone",
+          "height": 3
         },
         {
-          "block": "minecraft:stone",
+          "block": "minecraft:grass_block",
           "height": 1
         }
       ],

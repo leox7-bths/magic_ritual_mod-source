@@ -14,9 +14,11 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -33,6 +35,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.joml.Vector3f;
@@ -209,45 +212,49 @@ public class MagicCenterBlockEntity extends BlockEntity implements MenuProvider 
 
     public static void tick(Level level, BlockPos pos, BlockState state, MagicCenterBlockEntity be) {
 
-        Minecraft mc = Minecraft.getInstance();
+        if (level.isClientSide) {
+            Minecraft mc = Minecraft.getInstance();
 
-        if (mc.level == null || mc.gameRenderer == null) {
+            if (mc.level == null || mc.gameRenderer == null) {
+                return;
+            }
+
+            Frustum frustum = mc.levelRenderer.getFrustum();
+            if (frustum == null) {
+                return;
+            }
+
+            AABB box = new AABB(pos).inflate(1);
+
+            if (!frustum.isVisible(box)) {
+                return;
+            }
+
+            if (level.getNearestPlayer(
+                    pos.getX() + 0.5,
+                    pos.getY() + 0.5,
+                    pos.getZ() + 0.5,
+                    32,
+                    false
+            ) == null) {
+                return;
+            }
+
+            if (be.particlesEnabled) {
+                spawnParticles(
+                        level,
+                        pos,
+                        state,
+                        be,
+                        NORMAL_POINTS,
+                        new Vector3f(1.0f, 0.0f, 0.0f)
+                );
+            }
             return;
         }
-
-        Frustum frustum = mc.levelRenderer.getFrustum();
-
-        AABB box = new AABB(pos).inflate(1);
-
-        if (!frustum.isVisible(box)) {
-            return;
-        }
-
-        if (level.getNearestPlayer(
-                pos.getX() + 0.5,
-                pos.getY() + 0.5,
-                pos.getZ() + 0.5,
-                32,
-                false
-        ) == null) {
-            return;
-        }
-
-        if (level.isClientSide && be.particlesEnabled) {
-            spawnParticles(
-                    level,
-                    pos,
-                    state,
-                    be,
-                    NORMAL_POINTS,
-                    new Vector3f(1.0f, 0.0f, 0.0f)
-            );
-            return;
-        }
-
-        if (level.isClientSide) return;
 
         int radius = state.getValue(MagicCenterBlock.RADIUS);
+        detectCombos(level, pos, state, radius);
 
         int attackCount = getCircleCount(level, pos, radius, CircleType.ATTACK);
         int defenseCount = getCircleCount(level, pos, radius, CircleType.DEFENSE);
@@ -308,6 +315,10 @@ public class MagicCenterBlockEntity extends BlockEntity implements MenuProvider 
             be.fuel += 1.0f;
         }
 
+        if (be.fuel > 0 && forcefieldActive) {
+            be.bounceBlacklistedPlayers(level, pos, radius);
+        }
+
         if (be.fuel > 0 && level.getGameTime() % 20 == 0) {
 
             AABB area = new AABB(pos).inflate(radius);
@@ -340,10 +351,6 @@ public class MagicCenterBlockEntity extends BlockEntity implements MenuProvider 
                                 true,
                                 false
                         ));
-                    }
-
-                    if (forcefieldActive) {
-                        // optional future effect
                     }
 
                 } else {
@@ -416,6 +423,52 @@ public class MagicCenterBlockEntity extends BlockEntity implements MenuProvider 
                     }
                 }
             }
+        }
+    }
+
+    private void bounceBlacklistedPlayers(Level level, BlockPos centerPos, int radius) {
+        AABB area = new AABB(centerPos).inflate(radius + 4.0);
+        for (Player player : level.getEntitiesOfClass(Player.class, area)) {
+            bounceBlacklistedPlayer(centerPos, radius, player);
+        }
+    }
+
+    private void bounceBlacklistedPlayer(BlockPos centerPos, int radius, Player player) {
+        if (!blacklistedPlayers.contains(player.getGameProfile().getName())) {
+            return;
+        }
+
+        double centerX = centerPos.getX() + 0.5;
+        double centerZ = centerPos.getZ() + 0.5;
+        double dx = player.getX() - centerX;
+        double dz = player.getZ() - centerZ;
+        double distance = Math.sqrt(dx * dx + dz * dz);
+
+        if (distance < 0.001) {
+            dx = 1.0;
+            dz = 0.0;
+            distance = 1.0;
+        }
+
+        double unitX = dx / distance;
+        double unitZ = dz / distance;
+        Vec3 velocity = player.getDeltaMovement();
+        double outwardSpeed = velocity.x * unitX + velocity.z * unitZ;
+        double barrierDistance = radius + 1.75;
+        boolean movingIntoBarrier = distance <= radius + 4.0 && outwardSpeed < -0.05;
+        if (distance > barrierDistance && !movingIntoBarrier) {
+            return;
+        }
+
+        double penetration = Math.max(0.0, barrierDistance - distance);
+        double reboundSpeed = Math.min(3.0, 1.35 + penetration * 0.35);
+
+        double bounceSpeed = Math.max(reboundSpeed, Math.abs(outwardSpeed) + 0.65);
+        player.setDeltaMovement(unitX * bounceSpeed, Math.max(velocity.y, 0.35), unitZ * bounceSpeed);
+        player.push(unitX * 0.2, 0.05, unitZ * 0.2);
+        player.hasImpulse = true;
+        if (player instanceof ServerPlayer serverPlayer) {
+            serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
         }
     }
 

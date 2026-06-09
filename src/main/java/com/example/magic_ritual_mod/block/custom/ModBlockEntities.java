@@ -45,6 +45,14 @@ public class ModBlockEntities {
                     ).build(null)
             );
 
+    public static final Supplier<BlockEntityType<FogEscapeBlockEntity>> FOG_ESCAPE_BE =
+            BLOCK_ENTITIES.register("fog_escape_be",
+                    () -> BlockEntityType.Builder.of(
+                            FogEscapeBlockEntity::new,
+                            ModBlocks.FOG_ESCAPE_BLOCK.get()
+                    ).build(null)
+            );
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

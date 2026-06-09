@@ -504,6 +504,9 @@ public class MagicCircleBlockEntity extends BlockEntity {
         }
 
         Frustum frustum = mc.levelRenderer.getFrustum();
+        if (frustum == null) {
+            return;
+        }
 
         AABB box = new AABB(pos).inflate(1);
 
